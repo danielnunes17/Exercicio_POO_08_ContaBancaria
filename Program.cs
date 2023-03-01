@@ -11,10 +11,10 @@ public class Program
         Console.WriteLine("Entre com o número da conta: \n");
         int numeroConta = int.Parse(Console.ReadLine());
         Console.WriteLine("Entre com o titular da conta: \n");
-        string nome = Console.ReadLine();
+        string? nome = Console.ReadLine();
         Console.WriteLine("Haverá depósito inicial(s / n)? \n");
-        char resposta = char.Parse(Console.ReadLine());
-        if (resposta == 's' || resposta == 'S')
+        string resposta = Console.ReadLine();
+        if (resposta.ToUpper() == "S")
         {
             Console.WriteLine("Entre com o valor de depósito inicial: \n");
             double depositoInicial = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
@@ -30,8 +30,8 @@ public class Program
 
         Console.WriteLine();
         Console.WriteLine("Entre com um valor para depósito: \n");
-        double quantia = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-        conta.Depositar(quantia);
+        double quantiaDeposito = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+        conta.Depositar(quantiaDeposito);
         Console.WriteLine("Dados da conta atualizados: \n");
         Console.WriteLine(conta + "\n");
 
